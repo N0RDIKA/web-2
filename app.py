@@ -15,7 +15,7 @@ def start():
 </header>
 <h1> web-сервер на flask<h1>
 <footer>
-&copy; Сердюк Анастасия, ФБИ-11Б 3 курс, 2023
+&copy; Сердюк Анастасия, ФБИ-11, 3 курс, 2023
 </footer>
 </body>
 </html>
