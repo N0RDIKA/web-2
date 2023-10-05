@@ -201,7 +201,7 @@ def  mars():
 '''
 @app.route('/lab2/example')
 def  example(): 
-    name = 'Сердюк Анастасия'
+    name = ''
     number = '2'
     group = 'ФБИ-11'
     numbercurs = '3'
