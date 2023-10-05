@@ -201,5 +201,6 @@ def  mars():
 '''
 @app. route('/lab2/example')
 def  example(): 
-    return render_template('example.html')
+    name = 'Сердюк Анастасия'
+    return render_template('example.html', name=name)
    
