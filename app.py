@@ -199,8 +199,11 @@ def  mars():
         </body>
 </html>
 '''
-@app. route('/lab2/example')
+@app.route('/lab2/example')
 def  example(): 
     name = 'Сердюк Анастасия'
-    return render_template('example.html', name=name)
+    number = '2'
+    group = 'ФБИ-11'
+    numbercurs = '3'
+    return render_template('example.html', name=name, number = number, group=group, numbercurs=numbercurs)
    
