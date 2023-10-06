@@ -229,4 +229,40 @@ def  example():
 @app.route('/lab2/')
 def  lab2(): 
     return render_template('lab2.html')
-   
+
+@app.route('/lab2/lab22/')
+def  lab22(): 
+    return render_template('lab2_2.html')
+    <a href="/lab2/lab22/">flower</a>
+        <a href="/lab2/lab22/berry">berry</a>
+        <a href="/lab2/lab22/car">car</a>
+        <a href="/lab2/lab22/painting">painting</a>
+        <a href="/lab2/lab22/furniture">furniture</a>
+
+   @app.route('/lab2/lab22/flower')
+def  flower(): 
+    return render_template('lab_flower.html')
+
+
+
+    @app.route('/lab2/lab22/berry')
+def  berry(): 
+    return render_template('lab_berry.html')
+
+
+    @app.route('/lab2/lab22/car"')
+def  car(): 
+    return render_template('lab_car.html')
+
+
+
+     @app.route('/lab2/lab22/painting"')
+def  painting(): 
+    return render_template('lab_painting.html')
+
+
+    @app.route('/lab2/lab22/furniture"')
+def  furniture(): 
+    return render_template('lab_furniture.html')
+
+
