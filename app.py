@@ -22,6 +22,7 @@ def mrnu():
             </header>
              
             <h2><a href="http://127.0.0.1:5000/lab1" >Первая лабораторная</a></h2>
+            <h2><a href="http://127.0.0.1:5000/lab2" >Вторая лабораторная</a></h2>
 
             <footer>
                 &copy; Сердюк Анастасия, ФБИ-11, 3 курс, 2023
@@ -233,36 +234,40 @@ def  lab2():
 @app.route('/lab2/lab22/')
 def  lab22(): 
     return render_template('lab2_2.html')
-    <a href="/lab2/lab22/">flower</a>
-        <a href="/lab2/lab22/berry">berry</a>
-        <a href="/lab2/lab22/car">car</a>
-        <a href="/lab2/lab22/painting">painting</a>
-        <a href="/lab2/lab22/furniture">furniture</a>
 
-   @app.route('/lab2/lab22/flower')
+
+
+@app.route('/lab2/lab22/flower/')
 def  flower(): 
     return render_template('lab_flower.html')
 
 
 
-    @app.route('/lab2/lab22/berry')
+@app.route('/lab2/lab22/berry/')
 def  berry(): 
     return render_template('lab_berry.html')
 
 
-    @app.route('/lab2/lab22/car"')
+
+@app.route('/lab2/lab22/car/')
 def  car(): 
     return render_template('lab_car.html')
 
 
 
-     @app.route('/lab2/lab22/painting"')
+
+@app.route('/lab2/lab22/painting/')
 def  painting(): 
     return render_template('lab_painting.html')
 
 
-    @app.route('/lab2/lab22/furniture"')
+
+
+@app.route('/lab2/lab22/furniture/')
 def  furniture(): 
-    return render_template('lab_furniture.html')
+  return render_template('lab_furniture.html')
+  '''
+  <img src="''' + url_for('static', filename='mebel.jpg') + '''"
+  '''
 
 
