@@ -21,8 +21,8 @@ def mrnu():
 ФБ, WEB-программирование, часть 2. Список лабораторных
             </header>
              
-            <h2><a href="http://127.0.0.1:5000/lab1" >Первая лабораторная</a></h2>
-            <h2><a href="http://127.0.0.1:5000/lab2" >Вторая лабораторная</a></h2>
+            <h2><a href="/lab1" >Первая лабораторная</a></h2>
+            <h2><a href="/lab2" >Вторая лабораторная</a></h2>
 
             <footer>
                 &copy; Сердюк Анастасия, ФБИ-11, 3 курс, 2023
@@ -48,12 +48,12 @@ def lab1():
 Werkzeug, а также шаблонизатор Jinja2. Относится к категории так
 называемых микрофреймворков — минималистичных каркасов
 веб-приложений, сознательно предоставляющих лишь самые базовые возможности.</h2>
- <a href="http://127.0.0.1:5000/menu" >Меню</a>
+ <a href="/menu" >Меню</a>
   <h2>Реализованные роуты </h2>
-  <li><a href="http://127.0.0.1:5000/lab1/oak" >Дуб</a></li>
-  <li><a href="http://127.0.0.1:5000/lab1/student" >Студент</a></li>
- <li><a href="http://127.0.0.1:5000/lab1/python" >python</a></li>
- <li><a href="http://127.0.0.1:5000/lab1/mars" >Марс</a></li>
+  <li><a href="/lab1/oak" >Дуб</a></li>
+  <li><a href="/lab1/student" >Студент</a></li>
+ <li><a href="/lab1/python" >python</a></li>
+ <li><a href="/lab1/mars" >Марс</a></li>
             <footer>
                 &copy; Сердюк Анастасия, ФБИ-11, 3 курс, 2023
             </footer>
@@ -266,8 +266,6 @@ def  painting():
 @app.route('/lab2/lab22/furniture/')
 def  furniture(): 
   return render_template('lab_furniture.html')
-  '''
-  <img src="''' + url_for('static', filename='mebel.jpg') + '''"
-  '''
+  
 
 
