@@ -10,9 +10,12 @@ def start():
 
 @lab1. route("/menu")
 def menu():
-    return """
+    return '''
+   
 <!doctype html>
+
 <html>
+ <link rel="stylesheet" href="''' +url_for('static', filename='lab1.css')+'''"
         <head>
          <title>НГТУ, ФБ, Лаборатоорная работа 1</title>
         </head>
@@ -24,13 +27,14 @@ def menu():
              
             <h2><a href="/lab1" >Первая лабораторная</a></h2>
             <h2><a href="/lab2" >Вторая лабораторная</a></h2>
+            <h2><a href="/lab3" >Третья лабораторная</a></h2>
 
             <footer>
                 &copy; Сердюк Анастасия, ФБИ-11, 3 курс, 2023
             </footer>
         </body>
 </html>
-"""
+'''
 
 
 @lab1. route("/lab1")
