@@ -1,9 +1,6 @@
-from flask import Flask, redirect, url_for, render_template
-from lab1 import lab1
+from flask import Blueprint, redirect, url_for, render_template
+lab2 = Blueprint('lab2',__name__)
 
-
-lab2 = Flask(__name__)
-lab2.register_blueprint(lab1)
 
 
 
