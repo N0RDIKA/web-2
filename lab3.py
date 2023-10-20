@@ -12,9 +12,10 @@ def  forml():
     if user =='':
         errors['user'] = 'Заполните поле!'
     age = request.args.get('age')
+    if age =='':
+        errors['age'] = 'Заполните поле!'
     sex = request.args.get('sex')
-    if sex =='':
-        errors['sex'] = 'Заполните поле!'
+    
     return render_template('forml.html', user=user, age=age, sex=sex, errors=errors)
 
 @lab3. route('/lab3/order/')
@@ -44,3 +45,38 @@ def  pay():
 def  succes():
 
     return render_template('succes.html')
+
+@lab3. route('/lab3/gb/')
+def  gb(): 
+    errors = {}
+    gb = request.args.get('gb')
+    if gb =='':
+        errors['gb'] = 'Заполните поле!'
+    gbb = request.args.get('gbb')
+    if gbb =='':
+        errors['gbb'] = 'Заполните поле!'
+    gbbb = request.args.get('gbbb')
+    if gbbb =='':
+        errors['gbbb'] = 'Заполните поле!'
+    tip = request.args.get('tip')
+    polkav = request.args.get('polkav')
+    
+    polkab = request.args.get('polkab')
+   
+    bagaj = request.args.get('bagaj') 
+    
+    pynktv = request.args.get('pynktv')
+    if pynktv =='':
+        errors['pynktv'] = 'Заполните поле!'
+    pynktp = request.args.get('pynktp')
+    if pynktp =='':
+        errors['pynktp'] = 'Заполните поле!'
+        
+    age = request.args.get('age')
+    if age =='':
+        errors['age'] = 'Заполните поле!'
+    date = request.args.get('date')
+    if date =='':
+        errors['date'] = 'Заполните поле!'
+    return render_template('gb.html',gb = gb, gbb=gbb, gbbb=gbbb, errors=errors, tip = tip, polkav=polkav, polkab=polkab, bagaj=bagaj, age = age, date=date, pynktp=pynktp, pynktv=pynktv)
+    
