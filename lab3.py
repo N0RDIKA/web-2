@@ -1,4 +1,5 @@
 from flask import Blueprint, redirect, url_for, render_template, request
+import math
 lab3 = Blueprint('lab3', __name__)
 
 @lab3. route("/lab3/")
@@ -80,3 +81,34 @@ def  gb():
         errors['date'] = 'Заполните поле!'
     return render_template('gb.html',gb = gb, gbb=gbb, gbbb=gbbb, errors=errors, tip = tip, polkav=polkav, polkab=polkab, bagaj=bagaj, age = age, date=date, pynktp=pynktp, pynktv=pynktv)
     
+
+
+
+@lab3. route("/lab3/for199/<int:num1>/<int:num2>/<int:num3>/<int:num4>")
+def for199(num1,num2,num3,num4): 
+    if num1a == num2b == num3c == num4d:
+        result = 4
+    elif num1a == num2b == num4d:
+        result = 3
+    elif num1a == num3c == num4d:
+        result = 2
+    else:
+        result = 1
+    return f"{result}"
+
+
+    
+   
+@lab3. route("/lab3/for19/<float:x>/<int:n>")
+def for19(x,n):
+    result = 0.0
+    f=1
+    if n <= 0:
+        return "должно быть больше 0"
+    for i in range(1,n + 1):
+        a= (f * x **(2 * i - 1))/math.factorial(2 * i - 1)
+        result += a
+        f *= -1
+    return f"приближение значение sin({x}) c {n}: {result}"
+    
+
