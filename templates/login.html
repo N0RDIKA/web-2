@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>Вход</h1>
+    <h2>Пожалуйста, авторизуйтесь</h2>
+    <form method="post">
+        <div>
+            <label for="username">Пользователь:</label>
+            <input type="text" id="username" name="username" values = "{{username}}">
+        </div>
+        <div>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" values = "{{password}}">
+        </div>
+        <div>
+            <button type="submit">Войти</button>
+            <ibutton type="reset">Отмена</ibutton>
+        </div>
+    </form>
+{% endblock %}
