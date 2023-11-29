@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 2{% endblock %}
+
+
+
+{% block main %}
+    <div>{{errors}}</div>
+    <div>Заказ умпешно сформирован.Вес:{{  weight  }}кг, зерно - {{  zerno  }}</div>
+    <a href="/lab4/zerno">Вернуться</a>
+{% endblock %}
