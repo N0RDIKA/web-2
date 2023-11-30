@@ -5,8 +5,17 @@
     <title>Сердюк Анастасия. {% block lab %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='lab1.css') }}">
 
-</head>
+{% if request.cookies.get('color') or request.cookies.get('background-color') or request.cookies.get('font-size') %} 
+    <style>
+        body {
+            color: {{ request.cookies.get('color') }};
+            background-color: {{ request.cookies.get('background-color') }};
+            font-size: {{ request.cookies.get('font-size') }};
+        }
+    </style>
 <body>
+{% endif %}
+</head>
     <header>
         WEB-програмирование, часть 2. {{ self.lab() }}
     </header>
