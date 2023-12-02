@@ -1,0 +1,26 @@
+version: '2'
+services:
+  postgres:
+    image: postgres:alpine3.18
+    ports:
+      # Прокидываем порт с контейнера на хост систему
+      #- 5432:5432
+      # Если postgres уже установлен, то порт поменяйте от 1024 до 65535
+      # например, ниже. Порт подключения к БД в flask тоже поменяется
+      - 65223:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:7.8
+    ports:
+      - 8081:80
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=postgres
+      - PGADMIN_DISABLE_POSTFIX=true
+volumes:
+  postgres-data:
+

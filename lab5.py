@@ -10,7 +10,8 @@ def main():
         host = "127.0.0.1",
         database="knowledge_base",
         user="serdyuk_anastasiya_knowledge_base",
-        password="postges"
+        password="postgres",
+        port=65223
     )
 
     cur = conn.cursor()
@@ -24,3 +25,23 @@ def main():
 
     return "go to console"
     
+
+
+@lab5.route('/lab5/users')
+def users():
+    conn = psycopg2.connect(
+        
+        host = "127.0.0.1",
+        database="knowledge_base",
+        user="serdyuk_anastasiya_knowledge_base",
+        password="postgres",
+        port=65223
+    )
+
+    cur = conn.cursor()
+    cur.execute('SELECT username FROM users')
+    users = [row[0] for row in cur.fetchall()]
+    conn.close()
+    return (users)
+    
+    return render_template('users.html', users=users)

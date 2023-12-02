@@ -12,10 +12,10 @@ def login():
     username = request.form.get('username')
     password = request.form.get('password')
     if username == 'alex' and password == '123':
-        return render_template('success.html',username=username)
+        return render_template('success.html')
     else:
         error = 'Неверные логин и/или пароль'
-    return render_template ('login.html', error=error, username=username,password=password)
+    return render_template ('login.html', error=error)
 
 
 
