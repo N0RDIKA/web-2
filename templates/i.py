@@ -9,3 +9,7 @@ for i in range(1,a+1):
     
 
 print("Sum = ", s)
+{%block main %}
+    <h1 style="text-align: center;">Привет, {{username}} ! </h1>
+    
+{% endblock %}

@@ -1,0 +1,40 @@
+.block1 {
+    position: fixed;
+    width: auto;
+    height: auto;
+    left: 14px;
+    top: 40px;
+    font-size: 21px
+}
+.block2 {
+    position: fixed;
+    width: auto;
+    height: auto;
+    left: 214px;
+    top: 40px;
+    font-size: 21px
+}
+.block3 {
+    position: fixed;
+    width: auto;
+    height: auto;
+    right: 114px;
+    top: 40px;
+    font-size: 21px
+}
+.block4 {
+    position: fixed;
+    width: auto;
+    height: auto;
+    left: 914px;
+    top: 40px;
+    font-size: 21px
+}
+.block5 {
+    position: fixed;
+    width: auto;
+    height: auto;
+    left: 614px;
+    top: 40px;
+    font-size: 21px
+}

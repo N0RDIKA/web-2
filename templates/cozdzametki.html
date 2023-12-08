@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+
+<div>
+    <h1>Новая заметка</h1>
+
+    <form method="POST">
+        <inpyt name="title_article" type="text" placeholder="Названии статьи">
+        <textarea name="text_article" placeholder="Текст статьи" rows="">
+    </textarea>
+        <input type="sumbit" value="Apply"/>
+
+    </form>
+</div>
+{% endblock %}

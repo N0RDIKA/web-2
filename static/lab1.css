@@ -31,3 +31,44 @@ footer {
     color: #e41818;
 
 }
+
+.block1 {
+    position: fixed;
+    width: auto;
+    height: auto;
+    left: 114px;
+    top: 140px;
+    font-size: 21px
+}
+.block2 {
+    position: fixed;
+    width: auto;
+    height: auto;
+    left: 390px;
+    top: 140px;
+    font-size: 21px
+}
+.block3 {
+    position: fixed;
+    width: auto;
+    height: auto;
+    left: 514px;
+    top: 140px;
+    font-size: 21px
+}
+.block4 {
+    position: fixed;
+    width: auto;
+    height: auto;
+    left: 214px;
+    top: 140px;
+    font-size: 21px
+}
+.block5 {
+    position: fixed;
+    width: auto;
+    height: auto;
+    left: 714px;
+    top: 140px;
+    font-size: 21px
+}
