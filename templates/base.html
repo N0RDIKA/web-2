@@ -5,7 +5,7 @@
     <title>Сердюк Анастасия. {% block lab %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='lab1.css') }}">
 
-{% if request.cookies.get('color') or request.cookies.get('background-color') or request.cookies.get('font-size') %} 
+    {% if request.cookies.get('color') or request.cookies.get('background-color') or request.cookies.get('font-size') %} 
     <style>
         body {
             color: {{ request.cookies.get('color') }};
@@ -14,8 +14,8 @@
         }
     </style>
 
-{% endif %}
-{% block script %}{% endblock %}
+    {% endif %}
+    {% block script %}{% endblock %}
 </head>
 <body>
 
