@@ -1,24 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Сердюк Анастасия. {% block lab %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static',filename='lab1.css') }}">
-
-    {% if request.cookies.get('color') or request.cookies.get('background-color') or request.cookies.get('font-size') %} 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Давоян Карине. {% block lab %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='lab1.css') }}">
+    {% if request.cookies.get('color') %}
     <style>
         body {
-            color: {{ request.cookies.get('color') }};
             background-color: {{ request.cookies.get('background-color') }};
-            font-size: {{ request.cookies.get('font-size') }};
+            font-size: {{request.cookies.get('font-size') }};
+            color: {{ request.cookies.get('color') }};
         }
     </style>
-
     {% endif %}
     {% block script %}{% endblock %}
 </head>
 <body>
+    <header>
+        WEB-программирование, часть 2. {{ self.lab() }}
+    </header>
 
+    <main>
+        {% block main %}{% endblock %}
+        <li>
+            <a href="/menu">Меню</a>
+        </li>
+
+    </main>
+
+    <footer>
+        
+    </footer>
+    
 </body>
-
 </html>

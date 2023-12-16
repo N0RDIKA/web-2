@@ -198,7 +198,7 @@ def getArticle(article_id):
         text = articleBody[1].splitlines()
         return render_template("articles.html", article_text = text, article_title = articleBody[0], username = session.get("username"))
 
-@lab5.route("/lab5/articles")
+@lab5.route("/lab5/articlesALL")
 def getAllArticles():
     userID = session.get("id")
 
@@ -206,16 +206,16 @@ def getAllArticles():
         conn = dbConnect()
         cur = conn.cursor()
 
-        cur.execute("SELECT id, title, article_text FROM articles WHERE user_id = %s", (userID,))
+        cur.execute(f"SELECT  title FROM articles WHERE user_id = '{userID}'")
 
-        articles = cur.fetchall()
+        articleBody = cur.fetchall()
 
         dbClose(cur, conn)
 
-        if articles is None:
+        if articleBody is None:
             return "No articles found !"
 
-        return render_template("articles.html", articles = articles, username = session.get("username"))
+        return render_template("articlesALL.html", articles_title = articleBody, username = session.get("username"))
 
 
 
