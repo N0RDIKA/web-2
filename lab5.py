@@ -1,5 +1,5 @@
 from werkzeug.security import check_password_hash, generate_password_hash
-from flask import Blueprint, render_template, request, redirect
+from flask import Blueprint, render_template, request, redirect, session
 import psycopg2
 
 lab5 = Blueprint('lab5', __name__)
@@ -23,7 +23,7 @@ def dbClose(cursor, connection):
 
 @lab5.route("/lab5")
 def main():
-    visibleUser = "Anon"
+    visibleUser = "username"
     conn = psycopg2.connect(
         
         host = "127.0.0.1",
@@ -78,13 +78,10 @@ def registraciaPage():
         return render_template("register.html", errors=errors)
 
 
-    hashPassword = generate_password_hash(password)
+    hashPassword = generate_password_hash(password, method='pbkdf2')
 
     conn = dbConnect()
     cur = conn.cursor()
-
-
-
 
     cur.execute(f"SELECT username FROM users WHERE username = '{username}';")
 
@@ -100,7 +97,7 @@ def registraciaPage():
     
     cur.execute(f"INSERT INTO users (username, password) VALUES ('{username}','{hashPassword}');")
 
-    conn.commit
+    conn.commit()
  
     conn.close()
     cur.close()
@@ -116,17 +113,16 @@ def loginnPage():
     if request.method == "GET":
         return render_template("loginn.html", errors=errors)
 
-
-
     username=request.form.get("username")
     password = request.form.get("password")
 
     if not (username or password):
-        errors.append("Пожадуйста, заполните все поля")
+        errors.append("Пожалуйста, заполните все поля")
         return render_template('loginn.html', errors=errors)
 
     conn = dbConnect()
     cur = conn.cursor()
+    print("ffff")
 
     cur.execute(f"SELECT id, password FROM users WHERE username = '{username}'")
 
@@ -144,7 +140,7 @@ def loginnPage():
         session['id'] = userID
         session['username'] = username
         dbClose(cur, conn)
-        return redirect("/lab5/lab5.html")
+        return redirect("/lab5")
 
     else:
         errors.append("Неправильный логин или пароль")
@@ -152,8 +148,6 @@ def loginnPage():
 
 @lab5.route('/lab5/cozdzametki', methods = ["GET", "POST"])
 def cozdzametkiArticle():
-   
-
     errors=[]
 
     userID = session.get("id")
@@ -192,7 +186,7 @@ def getArticle(article_id):
         conn = dbConnect()
         cur = conn.cursor()
 
-        cur.execute("SELECT title, article_text FROM articles WHERE id = %s \ and user_id = %s%",(article_id, userID))
+        cur.execute("SELECT title, article_text FROM articles WHERE id = %s and user_id = %s",(article_id, userID))
 
         articleBody = cur.fetchone()
 
@@ -202,25 +196,30 @@ def getArticle(article_id):
             return "Not found !"
 
         text = articleBody[1].splitlines()
-        return render_template("articleN.html", article_text = text, article_title = articleBody[0], username = session.get("username"))
+        return render_template("articles.html", article_text = text, article_title = articleBody[0], username = session.get("username"))
 
-@lab5.route('/lab5/articles', methods=['GET'])
-def articles():
+@lab5.route("/lab5/articles")
+def getAllArticles():
     userID = session.get("id")
 
     if userID is not None:
         conn = dbConnect()
         cur = conn.cursor()
 
-        cur.execute("SELECT title FROM articles WHERE user_id = %s", (userID,))
+        cur.execute("SELECT id, title, article_text FROM articles WHERE user_id = %s", (userID,))
+
         articles = cur.fetchall()
 
         dbClose(cur, conn)
 
-        return render_template("articles.html", articles=articles)
-    return redirect("/lab5/loginn")
+        if articles is None:
+            return "No articles found !"
+
+        return render_template("articles.html", articles = articles, username = session.get("username"))
+
+
 
 @lab5.route('/lab5/logout', methods=['GET'])
 def logout():
     session.clear()
-    return redirect('/lab5/loginn')
+    return redirect("/lab5/loginn")

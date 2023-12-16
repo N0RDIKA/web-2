@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 7{% endblock %}
+
+{% block script %}
+<script src ="{{ url_for('static', filename= 'lab7/drink.js') }}"></script>
+{% endblock %}
+
+{% block main %}
+
+    <h1>Заказ напитка</h1>
+
+    <div>Напиток:</div>
+    <label>
+        <input type="radio" value="coffe" name="drink" checked>кофе 
+    </label>
+    <label>
+        <input type="radio" value="black tea" name="drink">черный чай 
+    </label>
+    <label>
+        <input type="radio" value="green-tea" name="drink">зеленый чай 
+    </label>
+    <label>
+        <input type="checkbox" name="milk" >молоко 
+    </label>
+    
+    <label>
+        <input type="checkbox" name="sugar" >сахар 
+    </label>
+    
+    <div>
+        <button onclick="getPrice()">Рассчитать цену</button>
+    </div>
+    <div id="price"></div>
+
+{% endblock %}
