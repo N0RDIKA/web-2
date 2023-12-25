@@ -13,12 +13,12 @@ def not_found(err):
     return render_template('error404.html')
 
 
-@lab9.app_errorhandler(500)
+@lab9.app_errorhandler(505)
 def error500(err):
-    return render_template('error500.html')
+    return render_template('error505.html')
 
 
-@lab9.route('/lab9/500')
+@lab9.route('/lab9/505')
 def error():
     result = 1 / 0
     return result
