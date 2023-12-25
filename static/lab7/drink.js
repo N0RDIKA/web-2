@@ -21,7 +21,7 @@ function getPrice() {
         return resp.json();
     })
     .then(function(data) {
-        document.querySelector('#price').innerHTML = `Цена напитка: ${data.result} руб`;
+        document.querySelector('#price').innerHTML = 'Цена напитка: ${data.result} руб';
         document.querySelector('#pay').style.display = '';
     })
 }
@@ -62,7 +62,7 @@ function pay() {
         } 
         else {
             document.querySelector('#error_message').innerHTML = '';
-            document.querySelector('#lol').innerHTML = `${data.result}`;
+            document.querySelector('#lol').innerHTML = '${data.result}';
             document.querySelector('#pay').style.display = 'none';
             document.querySelector('#price').style.display = 'none';
             document.querySelector('#pay_back').style.display = '';
@@ -101,7 +101,7 @@ function refund() {
     })
 
     .then(function(data) {
-            document.querySelector('#lol').innerHTML = `${data.result}`;
+            document.querySelector('#lol').innerHTML = '${data.result}';
             document.querySelector('#back').style.display = ''
     })
 

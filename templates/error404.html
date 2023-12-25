@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block lab %}Ошибка 404{% endblock %}
+
+{% block main %}
+    <h1>Такой страницы не существует</h1>
+    <img style="left: 17vw; height: 29vw;" src={{ url_for('static', filename='elka.png')}}>
+    <br>
+    <a href="/lab9" target="_self">Девятая лабораторная работа</a>
+    <br>
+    <br>
+{% endblock %}

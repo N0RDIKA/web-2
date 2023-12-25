@@ -198,7 +198,7 @@ def getArticle(article_id):
         text = articleBody[1].splitlines()
         return render_template("articles.html", article_text = text, article_title = articleBody[0], username = session.get("username"))
 
-@lab5.route("/lab5/articlesALL")
+@lab5.route("/lab5/articleALL")
 def getAllArticles():
     userID = session.get("id")
 
@@ -215,7 +215,7 @@ def getAllArticles():
         if articleBody is None:
             return "No articles found !"
 
-        return render_template("articlesALL.html", articles_title = articleBody, username = session.get("username"))
+        return render_template("articleALL.html", articles_title = articleBody, username = session.get("username"))
 
 
 
@@ -223,3 +223,4 @@ def getAllArticles():
 def logout():
     session.clear()
     return redirect("/lab5/loginn")
+
