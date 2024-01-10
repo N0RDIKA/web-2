@@ -8,13 +8,14 @@ body {
 }
 main {
     margin-bottom: 40px;
-    padding: 10px;
+    padding: 50px;
 
 }
 header {
     margin-bottom: 30px;
     padding: 20px;
     background: lightblue;
+    text-align: center;
 
 }
 footer {
@@ -33,42 +34,59 @@ footer {
 }
 
 .block1 {
-    position: fixed;
+    position: absolute;
     width: auto;
     height: auto;
-    left: 114px;
+    left: 344px;
     top: 140px;
-    font-size: 21px
+    font-size: 25px
 }
 .block2 {
-    position: fixed;
+    position: absolute;
     width: auto;
     height: auto;
-    left: 390px;
+    left: 740px;
     top: 140px;
-    font-size: 21px
+    font-size: 25px
 }
 .block3 {
-    position: fixed;
+    position: absolute;
     width: auto;
     height: auto;
-    left: 514px;
+    left: 994px;
     top: 140px;
-    font-size: 21px
+    font-size: 25px
 }
 .block4 {
-    position: fixed;
+    position: absolute;
     width: auto;
     height: auto;
-    left: 214px;
+    left: 504px;
     top: 140px;
-    font-size: 21px
+    font-size: 25px
 }
 .block5 {
-    position: fixed;
+    position: absolute;
     width: auto;
     height: auto;
-    left: 714px;
+    left: 1269px;
     top: 140px;
-    font-size: 21px
+    font-size: 25px
+}
+
+.block6 {
+    position: absolute;
+    width: auto;
+    height: auto;
+    left: 1469px;
+    top: 140px;
+    font-size: 25px
+}
+.block7 {
+    position: absolute;
+    width: auto;
+    height: auto;
+    left: 1060px;
+    top: 140px;
+    font-size: 25px
 }

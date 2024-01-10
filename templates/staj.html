@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+
+    {% if search_results %}
+        <ul>
+            {% for result in search_results %}
+                <li>{{ result }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Не найдено</p>
+    {% endif %}
+{% endblock %}

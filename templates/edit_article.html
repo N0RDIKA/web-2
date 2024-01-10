@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 5{% endblock %}
+
+{% block main %}
+<h1>Редактирование статьи</h1>
+
+<form action="/rgz/edit_article/{{ article_id }}" method="post">
+    <input type="hidden" id="articleId" name="articleId" value="{{ article_id }}">
+    <label for="newProfesia">Профессия:</label><br>
+    <input type="text" id="newProfesia" name="newProfesia" value="{{ newProfesia }}"><br>
+    <label for="newStaj">Стаж:</label><br>
+    <input type="text" id="newStaj" name="newStaj" value="{{ newStaj }}"><br>
+    <label for="newPriceMin">Минимальная цена:</label><br>
+    <input type="text" id="newPriceMin" name="newPriceMin" value="{{ newPriceMin }}"><br>
+    <label for="newPriceMax">Максимальная цена:</label><br>
+    <input type="text" id="newPriceMax" name="newPriceMax" value="{{ newPriceMax }}"><br>
+    <button type="submit">Сохранить</button>
+</form>
+
+{% for article in articles %}
+<div>
+    <h2>Номер анкеты {{ article[0] }}</h2>
+    <p>Профессия {{ article[1] }}</p>
+    <p>Стаж {{ article[2] }} </p>
+    <p>Минимальная цена {{ article[3] }} руб.</p>
+    <p>Максимальная цена {{ article[4] }} руб.</p>
+    <li><a href="/rgz/articles/{{article[0]}}">{{article[0]}}</article></a></li>
+    <hr style="border: none; border-top: 1px dotted #8c8b8b;">
+</div>
+{% endfor %}
+
+{% endblock %}

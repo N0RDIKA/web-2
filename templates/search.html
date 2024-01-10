@@ -1,0 +1,16 @@
+
+
+{% extends "base.html" %}
+
+
+
+{% block main %}
+<div>{{ errors }}</div>
+    <form action="/rgz/search_by_profession" method="get">
+        <h1>Поиск по профессии</h1>
+        <div>
+            <input type="text" id="profesia" name="profesia" placeholder="Enter Profession">
+        </div>
+        <button type="submit">Поиск</button>
+    </form>
+{% endblock %}

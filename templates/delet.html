@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 5{% endblock %}
+
+{% block main %}
+
+{% for article in articles %}
+<div>
+    <h2>Номер анкеты {{ article[0] }}</h2>
+    <p>Профессия {{ article[1] }}</p>
+    <p>Стаж {{ article[2] }} </p>
+    <p>Минимальная цена {{ article[3] }} руб.</p>
+    <p>Максимальная цена {{ article[4] }} руб.</p>
+    <li><a href="/rgz/articles/{{article[0]}}">{{article[0]}}</article></a></li>
+    <hr style="border: none; border-top: 1px dotted #8c8b8b;">
+</div>
+
+
+
+{% endfor %}
+{% endblock %}

@@ -1,3 +1,5 @@
+
+
 {% extends "base.html" %}
 
 {% block main %}
@@ -7,17 +9,15 @@
     <form method="post">
         <div>
             <label for="username">Пользователь:</label>
-            <input type="text" id="username" name="username" values = "{{username}}">
+            <input type="text" id="username" name="username" value="{{username}}">
         </div>
         <div>
             <label for="password">Пароль:</label>
-            
-            <input type="password" id="password" name="password" values = "{{password}}">
-            
+            <input type="password" id="password" name="password" value="{{password}}">
         </div>
         <div>
             <button type="submit">Войти</button>
-            <ibutton type="reset">Отмена</ibutton>
+            <button type="reset">Отмена</button>
         </div>
     </form>
 {% endblock %}

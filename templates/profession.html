@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block lab %}{% endblock %}
+
+{% block main %}
+<h1>Результат по слову {{ profesia }}</h1>
+    {% if search_results %}
+        <ul>
+            {% for result in search_results %}
+                <li>{{ result }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Не найдено</p>
+    {% endif %}
+{% endblock %}
