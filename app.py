@@ -1,8 +1,8 @@
 from flask import Flask
 
-from rgz import rgz
-from rgzm import rgzm
 
+from ui import ui
+from p import p
 
 
 
@@ -10,9 +10,9 @@ from rgzm import rgzm
 app = Flask(__name__)
 app.secret_key = "123"
 
-app.register_blueprint(rgz)
-app.register_blueprint(rgzm)
 
+app.register_blueprint(ui)
+app.register_blueprint(p)
 
 
 
