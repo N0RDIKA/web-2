@@ -19,7 +19,23 @@ def menu():
     <a href ="/number3"> 1.3 задание <a>
     <a href ="/number4"> 4 задание <a>
     """
-    
+@app.route('/number/', methods=['GET'])
+def multiply_random_number():
+    param = request.args.get('param')
+    if param:
+        random_number = random.randint(1, 100)
+        result = random_number * int(param)
+
+        response = {
+            'random_number': random_number,
+            'param': param,
+            'result': result
+        }
+
+        return jsonify(response), 200
+    else:
+        return jsonify({'error': 'Missing "param" query parameter'}), 400
+        
 @app.route('/number1/api/<int:param>', methods=['GET'])
 def calculate_number(param):
     random_number = random.randint(1, 100)
